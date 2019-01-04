@@ -1,6 +1,6 @@
 <template>
     <div class="hello">
-        <div class="model">哈哈1</div>
+        <div class="model">哈哈2</div>
     </div>
 </template>
 
