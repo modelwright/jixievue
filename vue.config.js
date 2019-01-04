@@ -2,7 +2,7 @@
 const path = require('path')
 const debug = process.env.NODE_ENV !== 'production'
 function resolve(dir) {
-  console.log(3333)
+  console.log(2222)
   console.log(dir);
   return path.join(__dirname, dir)
 }
