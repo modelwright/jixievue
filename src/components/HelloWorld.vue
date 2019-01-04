@@ -12,9 +12,3 @@ export default {
     }
 };
 </script>
-
-<style lang="less">
-.model{
-    background: #ddd;
-}
-</style>
