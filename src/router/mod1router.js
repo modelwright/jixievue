@@ -14,6 +14,10 @@ export default new Router({
                 path: 'index',
                 name: 'index',
                 component: () => import('@/pages/Project/Project')
+            },{
+                path: 'detail',
+                name: 'detail',
+                component: () => import('@/pages/Project/Detail')
             }]
         }
     ]

@@ -16,7 +16,7 @@
         </div>
         <div class="heng dibu">
             <div>
-                <div class="vCenter mb15"><div class="box greenk">建筑工程</div><div class="box redk">江北区</div></div>
+                <div class="vCenter mb15"><div class="boxkk greenk">建筑工程</div><div class="boxkk redk">江北区</div></div>
                 <div class="vCenter">
                     <div class="deage"><img class="wp100" src="@a/Images/png/pic1.png" alt=""></div>
                     <div class="deage"><img class="wp100" src="@a/Images/png/pic1.png" alt=""></div>
@@ -46,14 +46,6 @@ export default {
         p:last-child:after{.dn;}
     }
 }
-.deage{.wh(15,15);.mr10;}
-.box{padding: 2.5px 9px;.lh10;.bor;border-color: #34beb8;color:#34beb8;.borR(3px);.f20;.mr10;}
-.redk{border-color: #fe6e63;color:#fe6e63;}
-.greenk{border-color: #34beb8;color:#34beb8;}
 .dibu{padding: 11px 0;}
-.box2{.lh(16,16);.tc;padding: 0 6px;.cor1; .mr(5);.borR(3px);.f20;}
-.yellowbg{background:#fac042;}
-.redbg{background:#fe6e63;}
-.zibg{background:#bb9dff;}
-.greenbg{background:#4dd99e;}
+
 </style>
