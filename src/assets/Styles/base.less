@@ -451,6 +451,30 @@ em,i{font-style: inherit; font-size: 12px;}
   -webkit-flex: 1;
   flex: 1;}
 
+.turn-on-enter {
+  transform: translate3d(100%, 0, 0);
+}
+.turn-on-leave-to {
+  /* transform: translate3d(-20%, 0, 0); */
+}
+.turn-on-enter-active,
+.turn-on-leave-active {
+  transition: transform 0.4s ease;
+}
+.turn-off-enter {
+  /* transform: translate3d(-20%, 0, 0); */
+}
+.turn-off-leave-to {
+  transform: translate3d(100%, 0, 0);
+}
+.turn-off-enter-active,
+.turn-off-leave-active {
+  transition: transform 0.4s ease;
+}
+.turn-off-leave-active {
+  z-index: 2;
+}
+
 @font-face {font-family: "iconfont";
   src: url('//at.alicdn.com/t/font_901350_wd00w5ymgpf.eot?t=1542864797523'); /* IE9*/
   src: url('//at.alicdn.com/t/font_901350_wd00w5ymgpf.eot?t=1542864797523#iefix') format('embedded-opentype'), /* IE6-IE8 */
