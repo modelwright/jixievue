@@ -14,6 +14,14 @@ export default new Router({
                 path: 'index',
                 name: 'index',
                 component: () => import('@/pages/Wikipedia/Wikipedia')
+            },{
+                path: 'column',
+                name: 'column',
+                component: () => import('@/pages/Wikipedia/Column')
+            },{
+                path: 'detail',
+                name: 'detail',
+                component: () => import('@/pages/Wikipedia/Detail')
             }]
         }
     ]

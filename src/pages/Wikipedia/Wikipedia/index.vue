@@ -19,10 +19,10 @@
             </div>
         </div>
         <div class="wrap2 wrap-item">
-            <div class="titlebox vCenter">
+            <a class="titlebox vCenter di">
                 <h2>现场求助</h2>
                 <img class="icon" src="@a/Images/png/icon1.png" alt="" srcset="" />
-            </div>
+            </a>
             <div class="list">
                 <div class="item hengleft" v-for="item in list" :key="item">
                     <img class="icon" src="@a/Images/png/icon3.png" alt="">
@@ -38,10 +38,10 @@
             </div>
         </div>
         <div class="wrap3 wrap-item">
-            <div class="titlebox vCenter" style="margin-bottom:19px">
+            <a class="titlebox vCenter di" style="margin-bottom:19px">
                 <h2>法律法规</h2>
                 <img class="icon" src="@a/Images/png/icon1.png" alt="" srcset="" />
-            </div>
+            </a>
             <div class="list">
                 <div class="item item1 bor_bb">
                     <img src="@a/Images/jpg/img2.jpg" alt="" srcset="">
@@ -69,10 +69,10 @@
             </div>
         </div>
         <div class="wrap3 wrap-item">
-            <div class="titlebox vCenter" style="margin-bottom:19px">
+            <a class="titlebox vCenter di" style="margin-bottom:19px">
                 <h2>常用文章</h2>
                 <img class="icon" src="@a/Images/png/icon1.png" alt="" srcset="" />
-            </div>
+            </a>
             <div class="list">
                 <div class="item item1 bor_bb">
                     <img src="@a/Images/jpg/img3.jpg" alt="" srcset="">
@@ -100,10 +100,10 @@
             </div>
         </div>
         <div class="wrap3 wrap-item">
-            <div class="titlebox vCenter" style="margin-bottom:19px">
+            <a class="di titlebox vCenter" style="margin-bottom:19px">
                 <h2>实用知识</h2>
                 <img class="icon" src="@a/Images/png/icon1.png" alt="" srcset="" />
-            </div>
+            </a>
             <div class="list">
                 <div class="item bor_bb">
                     <img class="wp100" src="@a/Images/jpg/img4.jpg" alt="" srcset="" style="border-radius: 4px;margin-bottom:14px">
