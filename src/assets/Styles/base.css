@@ -37,6 +37,12 @@ input {
   margin: 0;
   padding: 0;
 }
+html,
+body,
+#app,
+#edut {
+  height: 100%;
+}
 input[type="button"],
 input[type="submit"],
 input[type="reset"],
@@ -515,6 +521,9 @@ i {
 .p25_0 {
   padding: 12.5px 0;
 }
+.p30_0 {
+  padding: 15px 0;
+}
 .pl0 {
   padding-left: 0;
 }
@@ -698,6 +707,16 @@ i {
 .yellowk {
   border-color: #fac042;
   color: #fac042;
+}
+.btnk {
+  width: 100%;
+  height: 40px;
+  color: #fff;
+  text-align: center;
+  font-size: 17px;
+  border-radius: 3px;
+  border: 0 !important;
+  background: #fe6e63;
 }
 .box2 {
   height: 16px;

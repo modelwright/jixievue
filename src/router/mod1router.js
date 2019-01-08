@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Project from '@/pages/Project'
 import ResourcesStore from '@/pages/ResourcesStore'
+import Mine from '@/pages/Mine'
 
 Vue.use(Router)
 
@@ -27,6 +28,23 @@ export default new Router({
             path: 'resourcesStore',
             name: 'resourcesStore',
             component: () => import('@/pages/ResourcesStore/Resources')
+        }]
+    },{
+        path: '/mine',
+        component: Mine,
+        redirect: '/mine/mineVip',
+        children: [{
+            path: 'mineVip',
+            name: 'mineVip',
+            component: () => import('@/pages/Mine/MyVip')
+        },{
+            path: 'mineSc',
+            name: 'mineSc',
+            component: () => import('@/pages/Mine/MySc')
+        },{
+            path: 'mineRecord',
+            name: 'mineRecord',
+            component: ()=> import('@/pages/Mine/MyRecord')
         }]
     }]
 })

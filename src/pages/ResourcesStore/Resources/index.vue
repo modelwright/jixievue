@@ -2,9 +2,9 @@
     <div>
         <Screen />
         <div class="w80 m0a">
-            <router-link to="/detail">
+            <!-- <router-link> -->
                 <BoxItem v-for="(item,key) in 6" :key="key" style="margin:15px;"/>
-            </router-link>
+            <!-- </router-link> -->
         </div>
     </div>
 </template>
