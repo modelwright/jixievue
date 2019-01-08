@@ -22,6 +22,22 @@ export default new Router({
                 path: 'detail',
                 name: 'detail',
                 component: () => import('@/pages/Wikipedia/Detail')
+            },{
+                path: 'siteHelp',
+                name: 'siteHelp',
+                component: () => import('@/pages/Wikipedia/SiteHelp')
+            },{
+                path: 'questions',
+                name: 'questions',
+                component: () => import('@/pages/Wikipedia/Questions')
+            },{
+                path: 'questionDetail',
+                name: 'questionDetail',
+                component: () => import('@/pages/Wikipedia/QuestionDetail')
+            },{
+                path: 'releaseSu',
+                name: 'releaseSu',
+                component: () => import('@/pages/Wikipedia/ReleaseSu')
             }]
         }
     ]

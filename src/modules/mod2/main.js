@@ -1,3 +1,4 @@
+import 'swiper/dist/css/swiper.css'
 import Vue from "vue";
 import App from "@/pages/WikipediaApp.vue";
 import router from "@/router/mod2router";
