@@ -1,5 +1,5 @@
 <template>
-    <div class="" style="padding:0 15px">
+    <div class="bag1" style="padding:0 15px">
         <div class="new-notice wrap-item">
             <div class="titlebox vCenter">
                 <h2>最新通告</h2>

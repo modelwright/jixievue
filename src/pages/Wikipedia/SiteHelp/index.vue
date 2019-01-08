@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="bag1">
         <div class="swiper-tab bor_bb">
             <swiper :options="swiperOption" ref="mySwiper" @someSwiperEvent="callback">
                 <swiper-slide class="active">全部</swiper-slide>

@@ -1,5 +1,5 @@
 <template>
-    <div  style="padding:0 15px">
+    <div class="bag1" style="padding:0 15px">
         <div class="wrap3 wrap-item">
             <div class="list">
                 <div class="item bor_bb">

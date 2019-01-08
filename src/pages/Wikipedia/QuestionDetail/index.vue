@@ -1,5 +1,5 @@
 <template>
-    <div class="pag">
+    <div class="page bag1">
         <div class="question-wrap bag1">
             <div class="question-info bor_bb">
                 <h3 class="f40 cor47">21世纪中国家庭，不生孩子，有错吗？</h3>
