@@ -38,13 +38,31 @@ export default new Router({
             name: 'mineVip',
             component: () => import('@/pages/Mine/MyVip')
         },{
-            path: 'mineSc',
+            path: 'mineSc', 
             name: 'mineSc',
             component: () => import('@/pages/Mine/MySc')
         },{
             path: 'mineRecord',
             name: 'mineRecord',
             component: ()=> import('@/pages/Mine/MyRecord')
+        },{
+            path: 'mineManage',
+            name: 'mineManage',
+            redirect: '/mine/mineManage/mineManageProject',
+            component: ()=> import('@/pages/Mine/MyManage'),
+            children: [{
+                path: 'mineManageProject',
+                name: 'mineManageProject',
+                component: () => import('@/pages/Mine/MyManage/Project')
+            },{
+                path: 'mineManageDetail',
+                name: 'mineManageDetail',
+                component: () => import('@/pages/Mine/MyManage/Detail')
+            },{
+                path: 'mineManageEnteredList',
+                name: 'mineManageEnteredList',
+                component: () => import('@/pages/Mine/MyManage/EnteredList')
+            }]
         }]
     }]
 })

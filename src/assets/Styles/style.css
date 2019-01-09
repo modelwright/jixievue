@@ -124,3 +124,11 @@
   border-radius: 3px;
   margin-right: 5px;
 }
+.tiaofu {
+  color: #fe6e63;
+  padding-left: 15px;
+  font-size: 12px;
+  height: 32px;
+  line-height: 32px;
+  background: #ffe5e3;
+}

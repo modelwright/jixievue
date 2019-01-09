@@ -67,7 +67,6 @@
                 </div>
             </div>
             <div class="heng dibu">
-                
                 <div class="vCenter inlineitem mb20 ">
                     <p class="f20 cor6">二级建造师(4)</p>
                     <p class="f20 cor6">施工员(17)</p>
@@ -75,6 +74,100 @@
                     <p class="f20 cor6">项目经理(17)</p>
                     <p class="f20 cor6">材料员(17)</p>
                 </div>
+            </div>
+        </div>
+        <div class="boxItem" v-if="type == 4" style="padding-top:10px">
+            <div class="borbbx">
+                <div class="heng vCenter pt10">
+                    <div class="vCenter">
+                        <p class="f32 cor3 fb mr15">项目经理</p>
+                        <p class="box2 zibg">工人</p>
+                    </div>
+                    <span class="f24" style="color: #fe6e63;">6000-800</span>
+                </div>
+                <div class="vCenter mb20 mt20">
+                    <span class="f20 cor9">意向地区：</span><div class="boxkk redk ">江北区</div>
+                    <span class="f20 cor9 ml30">意向明细：</span><div class="boxkk greenk">施工-建筑工程</div>
+                </div>
+            </div>
+            <div class="heng pt15 pb15">
+                <div class="vCenter inlineitem ">
+                    <p class="f20 cor6">二级建造师(4)</p>
+                    <p class="f20 cor6">施工员(17)</p>
+                    <p class="f20 cor6">安全员(17)</p>
+                    <p class="f20 cor6">项目经理(17)</p>
+                    <p class="f20 cor6">材料员(17)</p>
+                </div>
+            </div>
+            <div class="heng pb30">
+                <div>
+                    <div class="vCenter">
+                        <div class="deage"><img class="wp100" src="@a/Images/png/pic1.png" alt=""></div>
+                        <div class="deage"><img class="wp100" src="@a/Images/png/pic1.png" alt=""></div>
+                        <p class="f20 cor6 pl10">张益达</p>
+                    </div>
+                </div>
+                <div class="chuizhiR">
+                    <p class="cor9 f20">刚刚</p>
+                </div>
+            </div>
+        </div>
+        <div class="boxItem" v-if="type == 5" style="padding-top:10px">
+            <div class="borbbx">
+                <div class="heng vCenter pt10">
+                    <div class="vCenter">
+                        <p class="f32 cor3 fb mr15">项目经理</p>
+                        <p class="box2 yellowbg">施工</p>
+                        <p class="box2 redbg">急</p>
+                    </div>
+                    <span class="f24" style="color: #fe6e63;">面议</span>
+                </div>
+                <div class="vCenter mb20 mt20">
+                    <span class="f20 cor9">意向地区：</span><div class="boxkk redk ">江北区</div>
+                    <span class="f20 cor9 ml30">意向明细：</span><div class="boxkk greenk">施工-建筑工程</div>
+                </div>
+                <div class="heng pb10">
+                    <div class="vCenter inlineitem ">
+                        <p class="f20 cor6">二级建造师(4)</p>
+                        <p class="f20 cor6">施工员(17)</p>
+                        <p class="f20 cor6">安全员(17)</p>
+                        <p class="f20 cor6">项目经理(17)</p>
+                        <p class="f20 cor6">材料员(17)</p>
+                    </div>
+                </div>
+            </div>
+            <div class="heng pt20 pb20">
+                <p class="themefont f24">未发布</p>
+                <div class="btnW">加急</div>
+            </div>
+        </div>
+        <div class="boxItem" v-if="type == 6" style="padding-top:10px">
+            <div class="borbbx">
+                <div class="heng vCenter pt10">
+                    <div class="vCenter">
+                        <p class="f32 cor3 fb mr15">项目经理</p>
+                        <p class="box2 yellowbg">施工</p>
+                        <p class="box2 redbg">急</p>
+                    </div>
+                    <!-- <span class="f24" style="color: #fe6e63;">面议</span> -->
+                </div>
+                <div class="heng mt20">
+                    <div class="vCenter inlineitem ">
+                        <p class="f20 cor6">二级建造师(4)</p>
+                        <p class="f20 cor6">施工员(17)</p>
+                        <p class="f20 cor6">安全员(17)</p>
+                        <p class="f20 cor6">项目经理(17)</p>
+                        <p class="f20 cor6">材料员(17)</p>
+                    </div>
+                </div>
+                <div class="vCenter mb20 mt20">
+                    <div class="boxkk greenk">施工-建筑工程</div>
+                    <div class="boxkk redk ">江北区</div>
+                </div>
+            </div>
+            <div class="heng pt20 pb20">
+                <p class="themefont f24">未发布</p>
+                <div class="btnW">加急</div>
             </div>
         </div>
     </div>

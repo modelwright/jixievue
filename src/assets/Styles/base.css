@@ -718,6 +718,28 @@ i {
   border: 0 !important;
   background: #fe6e63;
 }
+.btnW {
+  width: 50px;
+  height: 22px;
+  /* Center slide text vertically */
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  color: #FFFFFF;
+  font-size: 12px;
+  background: #fe6e63;
+  border-radius: 3px;
+}
 .box2 {
   height: 16px;
   line-height: 16px;

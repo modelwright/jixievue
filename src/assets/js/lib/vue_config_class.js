@@ -31,6 +31,7 @@ module.exports = class VueConf {
   }
   validPages () {
     let [result, allPages] = [Object.create(null), this.allPages()]
+    console.log("测试dededededededededededededededededededededededededededededededededededededededededededededededededededededededede")
     if (this.rawArgv[0] === 'serve') {
       if (this.rawArgv.length === 1) {
         result = allPages
@@ -38,6 +39,7 @@ module.exports = class VueConf {
         for (let item of this.newArgv) Reflect.set(result, item, allPages[item])
       }
     } else if (this.rawArgv[0] === 'build') {
+      console.log(appconf);
       this.baseUrl = appconf.baseUrl(this.newArgv[0])
       result = appconf.urls[this.newArgv[0]]
     }
@@ -47,6 +49,7 @@ module.exports = class VueConf {
     const [pages, tempSet, validPages] = [this.pages, this.tempSet, this.validPages()]
     let [matchList, tempArr, modName] = [glob.sync(globPath), [], null]
     if (matchList.length !== 0) {
+      
       for (let entry of matchList) {
         tempArr = path.dirname(entry, path.extname(entry)).split('/')
         modName = tempArr[tempArr.length - 1]

@@ -1,12 +1,21 @@
 <template>
-    <div class="FooterBoxBtn">
-        <button class="btnk">开通会员/续费</button>
+    <div class="FooterBoxBtn" v-if="type=='one'">
+        <button class="btnk">{{text}}</button>
+    </div>
+    <div v-else-if="type=='three'" class="FooterBoxBtn" style="padding:0 10px;">
+        <button class="btnk" v-for="(item,index) in text" style="margin:0 5px;" :style="{background:item.color}" :key="index">{{item.text}}</button>
     </div>
 </template>
 
 <script>
 export default {
-
+    props: [
+        "type",
+        "text"
+    ],
+    created(){
+        console.log(this);
+    }
 }
 </script>
 
