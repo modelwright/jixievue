@@ -1,8 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Project from '@/pages/Project'
-import ResourcesStore from '@/pages/ResourcesStore'
-import Mine from '@/pages/Mine'
+import Project from '@/view/Project'
+import ResourcesStore from '@/view/ResourcesStore'
+import Mine from '@/view/Mine'
 
 Vue.use(Router)
 
@@ -14,11 +14,11 @@ export default new Router({
         children: [{
             path: 'index',
             name: 'index',
-            component: () => import('@/pages/Project/Project')
+            component: () => import('@/view/Project/Project')
         },{
             path: 'detail',
             name: 'detail',
-            component: () => import('@/pages/Project/Detail')
+            component: () => import('@/view/Project/Detail')
         }]
     },{
         path: '/resources',
@@ -27,7 +27,7 @@ export default new Router({
         children: [{
             path: 'resourcesStore',
             name: 'resourcesStore',
-            component: () => import('@/pages/ResourcesStore/Resources')
+            component: () => import('@/view/ResourcesStore/Resources')
         }]
     },{
         path: '/mine',
@@ -36,32 +36,32 @@ export default new Router({
         children: [{
             path: 'mineVip',
             name: 'mineVip',
-            component: () => import('@/pages/Mine/MyVip')
+            component: () => import('@/view/Mine/MyVip')
         },{
             path: 'mineSc', 
             name: 'mineSc',
-            component: () => import('@/pages/Mine/MySc')
+            component: () => import('@/view/Mine/MySc')
         },{
             path: 'mineRecord',
             name: 'mineRecord',
-            component: ()=> import('@/pages/Mine/MyRecord')
+            component: ()=> import('@/view/Mine/MyRecord')
         },{
             path: 'mineManage',
             name: 'mineManage',
             redirect: '/mine/mineManage/mineManageProject',
-            component: ()=> import('@/pages/Mine/MyManage'),
+            component: ()=> import('@/view/Mine/MyManage'),
             children: [{
                 path: 'mineManageProject',
                 name: 'mineManageProject',
-                component: () => import('@/pages/Mine/MyManage/Project')
+                component: () => import('@/view/Mine/MyManage/Project')
             },{
                 path: 'mineManageDetail',
                 name: 'mineManageDetail',
-                component: () => import('@/pages/Mine/MyManage/Detail')
+                component: () => import('@/view/Mine/MyManage/Detail')
             },{
                 path: 'mineManageEnteredList',
                 name: 'mineManageEnteredList',
-                component: () => import('@/pages/Mine/MyManage/EnteredList')
+                component: () => import('@/view/Mine/MyManage/EnteredList')
             }]
         }]
     }]

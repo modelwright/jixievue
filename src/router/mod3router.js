@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HeHome from '@/pages/HeHome'
+import HeHome from '@/view/HeHome'
 
 Vue.use(Router)
 
@@ -13,15 +13,15 @@ export default new Router({
             children: [{
                 path: 'index',
                 name: 'index',
-                component: () => import('@/pages/HeHome/Home')
+                component: () => import('@/view/HeHome/Home')
             },{
                 path: 'release',
                 name: 'release',
-                component: () => import('@/pages/HeHome/Release')
+                component: () => import('@/view/HeHome/Release')
             },{
                 path: 'identity',
                 name: 'identity',
-                component: () => import('@/pages/HeHome/Identity')
+                component: () => import('@/view/HeHome/Identity')
             }]
         }
     ]

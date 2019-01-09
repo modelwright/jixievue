@@ -1,7 +1,5 @@
 <template>
-    <div id="wikipedia">
-        <router-view/>
-    </div>
+    <router-view/>
 </template>
 
 <style lang="stylus">

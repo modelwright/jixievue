@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Wikipedia from '@/pages/Wikipedia'
+import Wikipedia from '@/view/Wikipedia'
 
 Vue.use(Router)
 
@@ -13,31 +13,31 @@ export default new Router({
             children: [{
                 path: 'index',
                 name: 'index',
-                component: () => import('@/pages/Wikipedia/Wikipedia')
+                component: () => import('@/view/Wikipedia/Wikipedia')
             },{
                 path: 'column',
                 name: 'column',
-                component: () => import('@/pages/Wikipedia/Column')
+                component: () => import('@/view/Wikipedia/Column')
             },{
                 path: 'detail',
                 name: 'detail',
-                component: () => import('@/pages/Wikipedia/Detail')
+                component: () => import('@/view/Wikipedia/Detail')
             },{
                 path: 'siteHelp',
                 name: 'siteHelp',
-                component: () => import('@/pages/Wikipedia/SiteHelp')
+                component: () => import('@/view/Wikipedia/SiteHelp')
             },{
                 path: 'questions',
                 name: 'questions',
-                component: () => import('@/pages/Wikipedia/Questions')
+                component: () => import('@/view/Wikipedia/Questions')
             },{
                 path: 'questionDetail',
                 name: 'questionDetail',
-                component: () => import('@/pages/Wikipedia/QuestionDetail')
+                component: () => import('@/view/Wikipedia/QuestionDetail')
             },{
                 path: 'releaseSu',
                 name: 'releaseSu',
-                component: () => import('@/pages/Wikipedia/ReleaseSu')
+                component: () => import('@/view/Wikipedia/ReleaseSu')
             }]
         }
     ]

@@ -1,5 +1,3 @@
-
- 
 const path = require('path')
 const glob = require('glob')
 const AppConf = require('./apps_config_class')
@@ -12,7 +10,7 @@ module.exports = class VueConf {
     this.globPathJs = ['./src/modules/**/main.js', 'entry'] // 入口脚本正则
     this.rawArgv = argv.slice(2)
     this.newArgv = argv.slice(3)
-    this.baseUrl = '/'
+    this.baseUrl = 'dev'
     this.pages = Object.create(null)
     this.tempSet = new Set()
     this.init()
@@ -31,7 +29,6 @@ module.exports = class VueConf {
   }
   validPages () {
     let [result, allPages] = [Object.create(null), this.allPages()]
-    console.log("测试dededededededededededededededededededededededededededededededededededededededededededededededededededededededede")
     if (this.rawArgv[0] === 'serve') {
       if (this.rawArgv.length === 1) {
         result = allPages
@@ -39,8 +36,9 @@ module.exports = class VueConf {
         for (let item of this.newArgv) Reflect.set(result, item, allPages[item])
       }
     } else if (this.rawArgv[0] === 'build') {
-      console.log(appconf);
+      console.log("进入build环境了")
       this.baseUrl = appconf.baseUrl(this.newArgv[0])
+      console.log("baseUrl执行完毕")
       result = appconf.urls[this.newArgv[0]]
     }
     return result
@@ -49,7 +47,6 @@ module.exports = class VueConf {
     const [pages, tempSet, validPages] = [this.pages, this.tempSet, this.validPages()]
     let [matchList, tempArr, modName] = [glob.sync(globPath), [], null]
     if (matchList.length !== 0) {
-      
       for (let entry of matchList) {
         tempArr = path.dirname(entry, path.extname(entry)).split('/')
         modName = tempArr[tempArr.length - 1]

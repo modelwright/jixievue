@@ -1,82 +1,46 @@
-
-const path = require('path')
-const debug = process.env.NODE_ENV !== 'production'
+let path = require('path')
+let glob = require('glob')
 function resolve(dir) {
-  console.log(2222)
-  console.log(dir);
-  return path.join(__dirname, dir)
+    console.log(2222)
+    console.log(dir);
+    return path.join(__dirname, dir)
 }
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
-const VueConf = require('./src/assets/js/lib/vue_config_class')
-const vueConf = new VueConf(process.argv)
+//配置pages多页面获取当前文件夹下的html和js
+function getEntry(globPath) {
+    let entries = {},
+        basename, tmp, pathname, appname;
 
-console.log('')
-console.log('本地启动或构建的文件信息 | 开始--------------------------------------------------------------')
-console.log(process.argv);
-console.log(vueConf.pages)
-console.log('本地启动或构建的文件信息 | 结束--------------------------------------------------------------')
-console.log('')
+    glob.sync(globPath).forEach(function(entry) {
+        basename = path.basename(entry, path.extname(entry));
+        // console.log(entry)
+        tmp = entry.split('/').splice(-3);
+        console.log(tmp)
+        pathname = basename; // 正确输出js和html的路径
+        
+        // console.log(pathname)
+        entries[pathname] = {
+            entry:'src/'+tmp[0]+'/'+tmp[1]+'/'+tmp[1]+'.js',
+            template:'src/'+tmp[0]+'/'+tmp[1]+'/'+tmp[2],
+            filename:tmp[2]
+        };
+    });
+    console.log(entries)
+    return entries;
+    
+}
+
+let htmls = getEntry('./src/pages/**/*.html');
+// console.log(htmls)
+//配置end
 
 module.exports = {
-    // baseUrl: process.env.NODE_ENV === 'production'
-    //   ? '/my-app/'
-    //   : '/',
-    baseUrl: vueConf.baseUrl,
-    outputDir: 'dist',
-    assetsDir: 'assets',
-    pages: vueConf.pages,
+    baseUrl: '',
+    pages:htmls,
     lintOnSave: true, // ture | false | 'error'
     runtimeCompiler: true,
-    transpileDependencies: [],
-    productionSourceMap: true, 
-    configureWebpack: config => {
-        //入口文件
-        // config.entry.app = ['babel-polyfill', './src/main.js'];
-        let plugins = [
-            new UglifyJsPlugin({
-                uglifyOptions: {
-                    compress: {
-                        warnings: false,
-                        drop_console:true,
-                        drop_debugger:true
-                    },
-                    output:{
-                        comments: false,
-                    }
-                },
-                sourceMap: false,
-                parallel: true,
-            })
-        ];
-        if (debug) {
-            // 开发环境配置
-            config.devtool = 'cheap-module-eval-source-map'
-        } else {
-            // 生产环境配置
-            config.plugins = [...config.plugins, ...plugins];
-            // config.module
-            // .rule('vue')
-            // .use('vue-loader')
-            //   .loader('vue-loader')
-            //   .tap(options => {
-            //     return options
-            //   })
-
-            // config.module
-            // .rule('graphql')
-            // .test(/\.graphql$/)
-            // .use('graphql-tag/loader')
-            //   .loader('graphql-tag/loader')
-            //   .end()
-            // const svgRule = config.module.rule('svg')
-            // svgRule.uses.clear()
-
-            // svgRule
-            //   .use('vue-svg-loader')
-            //     .loader('vue-svg-loader')
-        }
-    },
-    chainWebpack: config => { 
+    transpileDependencies: [], // 默认忽略，但是可额外增加例外的依赖包名
+    productionSourceMap: true, // 是否在构建生产包时生成 sourceMap 文件，false将提高构建速度
+    chainWebpack: config => {
         config.resolve.alias
             .set('@', resolve('src'))
             .set('@a', resolve('src/assets'))
@@ -85,92 +49,83 @@ module.exports = {
             .set('@api', resolve('src/api'));
 
         config.output.filename('[name].[hash].js').end(); 
- 
+
         config.module
-            .rule("vue")
-            .use("vue-loader")
-            .loader("vue-loader")
+            .rule('images')
+            .use('url-loader')
+            .loader('url-loader')
             .tap(options => {
-                options.compilerOptions.preserveWhitespace = true;
-                return options;
-            });
+                // 修改它的选项...
+                options.limit = 10000
+                return options
+            })
+
         const types = ['vue-modules', 'vue', 'normal-modules', 'normal']
-        // types.forEach(type => addStyleResourceStyus(config.module.rule('stylus').oneOf(type))) 
+        types.forEach(type => addStyleResourceStyus(config.module.rule('stylus').oneOf(type))) // module中不引用stylus就不加载 以提高加载速度
         types.forEach(type => addStyleResourceLess(config.module.rule('less').oneOf(type)))
-        if (debug) {
-            // 本地开发配置
-        } else {
-            // 生产开发配置
+
+        
+    },
+    css: { // 配置高于chainWebpack中关于css loader的配置
+        // modules: true, // 是否开启支持‘foo.module.css’样式
+        extract: true, // 是否使用css分离插件 ExtractTextPlugin，采用独立样式文件载入，不采用<style>方式内联至html文件中
+        sourceMap: false, // 是否在构建样式地图，false将提高构建速度
+        loaderOptions: { // css预设器配置项
+          css: {
+            localIdentName: '[name]-[hash]',
+            camelCase: 'only'
+          },
+          less: {
+            // javascriptEnabled: true,
+            // @/ 是 src/ 的别名
+            // 所以这里假设你有 `src/assets/Styles/base.less` 这个文件
+            // data: `@import "./src/assets/Styles/base.less";` // 全局变量
+          },
+          stylus: {}
         }
     },
-    css: { 
-        extract: true,
-        sourceMap: false,
-        loaderOptions: {
-            css: {
-                localIdentName: '[name]-[hash]',
-                camelCase: 'only'
-            },
-            less: {
-                javascriptEnabled: true
-            },
-            stylus: {}
-        }
-    },
-    parallel: require('os').cpus().length > 1, 
-    pluginOptions: { 
-        // 'style-resources-loader': {
-        //   preProcessor: 'less',
-        //   patterns: [
-        //       path.resolve(__dirname, "./src/assets/Styles/style.less")
-        //   ]
-        // }
-    },
-    pwa: { 
-        // name: 'vuebase',
-        // themeColor: '#4DBA87',
-        // msTileColor: '#000000',
-        // appleMobileWebAppCapable: 'yes',
-        // appleMobileWebAppStatusBarStyle: 'black',
-        // workboxPluginMode: 'InjectManifest',
-        // workboxOptions: {
-        //   swSrc: 'dev/sw.js',
-        // }
-    },
+    parallel: require('os').cpus().length > 1, // 构建时开启多进程处理babel编译
     devServer: {
-        open: true,
-        host: '0.0.0.0',
-        port: 8888,
+        index:'page1.html',//默认启动serve 打开page1页面
+        open: process.platform === 'darwin',
+        host: '',
+        port: 8088,
         https: false,
         hotOnly: false,
         proxy: {
-            '/api': {
-                target: '<url>',
-                ws: true,
-                changOrigin: true
+            '/xrf/': {
+                target: 'http://reg.tool.hexun.com/',
+                changeOrigin: true,
+                pathRewrite: {
+                    '^/xrf': ''
+                }
+            },
+            '/wa/': {
+                target: 'http://api.match.hexun.com/',
+                changeOrigin: true,
+                pathRewrite: {
+                    '^/wa': ''
+                }
             }
-        },
-        before: app => {}
+        }, // 设置代理
+        before: app => { }
     }
 }
 function addStyleResourceStyus (rule) {
-    console.log(1111111111111);
-    console.log()
     rule.use('style-resource')
-        .loader('style-resources-loader')
-        .options({
-            patterns: [
-                path.resolve(__dirname, './src/assets/Styles/base.styl')
-            ],
-        })
+      .loader('style-resources-loader')
+      .options({
+        patterns: [
+          path.resolve(__dirname, './src/assets/Styles/base.styl')
+        ],
+      })
 }
 function addStyleResourceLess (rule) {
-    console.log(1111111111111);
     rule.use('style-resource')
-        .loader('style-resources-loader')
-        .options({
-            patterns: [
-                path.resolve(__dirname, './src/assets/Styles/base.less')
-            ],
-        })
+      .loader('style-resources-loader')
+      .options({
+        patterns: [
+          path.resolve(__dirname, './src/assets/Styles/base.less')
+        ],
+      })
 }

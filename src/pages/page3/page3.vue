@@ -1,7 +1,5 @@
 <template>
-    <div id="hehome">
-        <router-view/>
-    </div>
+    <router-view/>
 </template>
 
 <style lang="stylus">

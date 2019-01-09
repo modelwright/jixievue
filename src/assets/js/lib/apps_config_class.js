@@ -89,6 +89,10 @@ const [
       return existFlag
     }
     baseUrl (app) {
+      console.log(app,"这是打出来的APP的信息")
+      console.log('----------------------------')
+      console.log(this.apps)
+      console.log('----------------------------')
       return `/${this.appConfig.APP_LIST[this.apps.findIndex(item => item === app)].BASE_URL}/` || ''
     }
   }
