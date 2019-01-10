@@ -3,9 +3,9 @@
         <div class="boxItem" v-if="type == 1">
             <div class="borbbx">
                 <div class="vCenter pt10">
-                    <p class="box2 redbg">急</p>
-                    <p class="box2 yellowbg">施工</p>
-                    <p class="f32 cor3 fb mr15">重庆市22号线地铁一期工程</p>
+                    <div class=""><img style="width:19px;" src="@a/Images/png/pic6.png" alt=""></div>
+                    <p class="biaoqian">【施工】</p>
+                    <p class="f32 cor3 fb mr15 textEll">重庆市22号线地铁一期工程</p>
                 </div>
                 <div class="henglineleft inlineitem mb20 mt10">
                     <p class="f24 cor6">二级建造师(4)</p>
@@ -33,9 +33,9 @@
         <div class="boxItem" v-if="type == 2"  style="padding-top:10px">
             <div class="borbbx">
                 <div class="vCenter pt10">
-                    <p class="box2 redbg">急</p>
-                    <p class="box2 yellowbg">施工</p>
-                    <p class="f32 cor3 fb mr15">重庆市22号线地铁一期工程</p>
+                    <div class=""><img style="width:19px;" src="@a/Images/png/pic6.png" alt=""></div>
+                    <p class="biaoqian">【施工】</p>
+                    <p class="f32 cor3 fb mr15 textEll">重庆市22号线地铁一期工程</p>
                 </div>
                 <div class="henglineleft inlineitem mt10 mb20">
                     <p class="f24 cor6">二级建造师(4)</p>
@@ -55,9 +55,9 @@
             <div class="borbbx">
                 <div class="heng vCenter pt10">
                     <div class="vCenter">
-                        <p class="box2 redbg">急</p>
-                        <p class="box2 yellowbg">施工</p>
-                        <p class="f32 cor3 fb mr15">项目经理</p>
+                        <div class=""><img style="width:19px;" src="@a/Images/png/pic6.png" alt=""></div>
+                        <p class="biaoqian">【施工】</p>
+                        <p class="f32 cor3 fb mr15 textEll">项目经理</p>
                     </div>
                     <span class="f24" style="color: #fe6e63;">面议</span>
                 </div>
@@ -84,8 +84,8 @@
             <div class="borbbx">
                 <div class="heng vCenter pt10">
                     <div class="vCenter">
-                        <p class="box2 zibg">工人</p>
-                        <p class="f32 cor3 fb mr15">项目经理</p>
+                        <p class="biaoqian">【施工】</p>
+                        <p class="f32 cor3 fb mr15 textEll">项目经理</p>
                     </div>
                     <span class="f24 fb" style="color: #fe6e63;">6000-800</span>
                 </div>
@@ -125,9 +125,9 @@
             <div class="borbbx">
                 <div class="heng vCenter pt10">
                     <div class="vCenter">
-                        <p class="box2 redbg">急</p>
-                        <p class="box2 yellowbg">施工</p>
-                        <p class="f32 cor3 fb mr15">项目经理</p>
+                        <div class=""><img style="width:19px;" src="@a/Images/png/pic6.png" alt=""></div>
+                        <p class="biaoqian">【施工】</p>
+                        <p class="f32 cor3 fb mr15 textEll">项目经理</p>
                     </div>
                     <span class="f24" style="color: #fe6e63;">面议</span>
                 </div>
@@ -158,9 +158,9 @@
             <div class="borbbx">
                 <div class="heng vCenter pt10">
                     <div class="vCenter">
-                        <p class="box2 redbg">急</p>
-                        <p class="box2 yellowbg">施工</p>
-                        <p class="f32 cor3 fb mr15">项目经理</p>
+                        <div class=""><img style="width:19px;" src="@a/Images/png/pic6.png" alt=""></div>
+                        <p class="biaoqian">【施工】</p>
+                        <p class="f32 cor3 fb mr15 textEll">项目经理</p>
                     </div>
                     <!-- <span class="f24" style="color: #fe6e63;">面议</span> -->
                 </div>
