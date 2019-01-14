@@ -31,6 +31,7 @@
 
 <script>
 import BoxItem from '@c/BoxItem';
+import {logout} from '@/api/login';
 export default {
     components: {BoxItem},
     data() {
@@ -41,6 +42,11 @@ export default {
     methods: {
         qiehuan(index){
             this.tab = index;
+            this.logout(data).then((item)=>{
+                console.log(item)
+            }).catch(err=>{
+                console.log(err)
+            })
         }
     }
 }

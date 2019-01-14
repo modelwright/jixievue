@@ -21,7 +21,8 @@ function getEntry(globPath) {
         entries[pathname] = {
             entry:'src/'+tmp[0]+'/'+tmp[1]+'/'+tmp[1]+'.js',
             template:'src/'+tmp[0]+'/'+tmp[1]+'/'+tmp[2],
-            filename:tmp[2]
+            filename:tmp[2],
+            title:tmp[1]
         };
     });
     console.log(entries)

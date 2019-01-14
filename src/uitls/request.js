@@ -1,6 +1,6 @@
 import axios from 'axios'
 import { GetuserData } from '@/uitls/auth'
-import router from '../router';
+import router from '../router/mod1router';
 import store from '../store';
 
 let load;
