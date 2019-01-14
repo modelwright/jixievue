@@ -63,6 +63,38 @@ export default new Router({
                 name: 'mineManageEnteredList',
                 component: () => import('@/view/Mine/MyManage/EnteredList')
             }]
+        },{
+            path: 'mineHelpCenter',
+            name: 'mineHelpCenter',
+            redirect: '/mine/mineHelpCenter/mineHelpCenter',
+            component: ()=> import('@/view/Mine/MyManage'),
+            children: [{
+                path: 'mineHelpCenter',
+                name: 'mineHelpCenter',
+                component: () => import('@/view/Mine/HelpCenter/HelpCenter')
+            },{
+                path: 'mineHelpCenterDetail',
+                name: 'mineHelpCenterDetail',
+                component: () => import('@/view/Mine/HelpCenter/Detail')
+            },{
+                path: 'mineHelpCenterClassifyList',
+                name: 'mineHelpCenterClassifyList',
+                component: () => import('@/view/Mine/HelpCenter/ClassifyList')
+            }]
+        },{
+            path: 'mineBannerApply',
+            name: 'mineBannerApply',
+            redirect: '/mine/mineBannerApply/mineBannerApplySubmitApply',
+            component: ()=> import('@/view/Mine/BannerApply'),
+            children: [{
+                path: 'mineBannerApplySubmitApply',
+                name: 'mineBannerApplySubmitApply',
+                component: () => import('@/view/Mine/BannerApply/SubmitApply')
+            },{
+                path: 'mineBannerApplySuccess',
+                name: 'mineBannerApplySuccess',
+                component: () => import('@/view/Mine/BannerApply/Success')
+            }]
         }]
     }]
 })
